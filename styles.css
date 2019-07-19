@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: rgb(80, 80, 80);
+    background: linear-gradient(to bottom right, rgb(135, 206, 235), rgb(234, 249, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+input, button {
+    outline: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 940px;
+    text-align: center;
+}
+
+.title {
+    margin: 60px 0;
+}
+
+.input-container {
+    width: 645px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+}
+
+#input-field {
+    width: 600px;
+    height: 35px;
+    border: none;
+}
+
+#input-btn {
+    width: 40px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    background: #fff;
+    font-size: 1.4em;
+    color: rgb(80, 80, 80);
+}
