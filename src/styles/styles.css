@@ -15,7 +15,9 @@ input, button {
 .container {
     margin: 0 auto;
     width: 940px;
+    height: 768px, 100vh;
     text-align: center;
+
 }
 
 .title {
@@ -38,6 +40,8 @@ input, button {
     width: 600px;
     height: 35px;
     border: none;
+    padding: 0 12px;
+    font-size: 1.2em;
 }
 
 #input-btn {
@@ -48,4 +52,13 @@ input, button {
     background: #fff;
     font-size: 1.4em;
     color: rgb(80, 80, 80);
+}
+
+.output-container {
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid rgb(95, 95, 95);
+    padding: 20px 0;
+    margin-top: 10px;
 }
