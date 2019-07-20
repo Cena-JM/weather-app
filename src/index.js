@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import "./styles/styles.css";
-import { renderWeather } from './render'
+import './styles/styles.css';
+import { getWeatherData } from './load_weather'
 
-renderWeather();
+
+getWeatherData('kampala');
