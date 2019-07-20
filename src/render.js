@@ -1,7 +1,7 @@
-import { getweather } from './weather'
+import { getWeatherData } from './weather'
 
 const renderWeather = () => {
-    getweather('Kampala')
+    getWeatherData('Kampala')
 }
 
 export { renderWeather }
