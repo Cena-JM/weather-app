@@ -2,9 +2,9 @@ let weatherData = 0;
 const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rgtem, win) => {
     // Select container
     const container = document.querySelector('.container');
+    const outputContainer = document.querySelector('.output-container');
 
     // Create elements
-    const outputContainer = document.createElement('div');
     const outputImage = document.createElement('div');
     const outputDescription = document.createElement('div');
     const outputHead = document.createElement('h3');
@@ -22,7 +22,6 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     geoCoords.innerHTML = 'Geo coords - ';
     
     // Set element attributes
-    outputContainer.classList.add('output-container', 'hidden');
     outputImage.setAttribute('id', 'output-image');
     weatherImage.setAttribute('src', `images/${weatherImg}`);
     weatherImage.setAttribute('alt', 'weather image');
@@ -31,13 +30,12 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     temp.classList.add('temp');
     geo.classList.add('high-light', 'geo');
 
-    // Arrange elements
     if (weatherData !== 0) {
         container.removeChild(weatherData);
         weatherData = 0;
     }
-    weatherData = outputContainer;
-    container.appendChild(weatherData);
+    // weatherData = outputContainer;
+    // container.appendChild(weatherData);
     outputImage.appendChild(weatherImage);
     outputContainer.appendChild(outputImage);
     outputContainer.appendChild(outputDescription);

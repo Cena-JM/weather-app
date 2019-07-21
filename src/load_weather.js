@@ -1,17 +1,23 @@
 import { renderWeather } from "./render_weather_data";
+import { optStatus, eStatus } from './controller';
+import { renderError } from "./render_error";
+
 const getWeatherData = (location) => {
   // URL (required), options (optional)
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=e104d887ccda4bc1fccc4a474a3d7347`)
     .then(function(response) {
         return response.json();
   }).then(function(response) {
-    setWeatherData(response)
-  }).catch((error) => {
-    console.log(error)
+    setWeatherData(response);
+  }).catch(() => {
+    renderError();
   });
 }
 
 const setWeatherData = (weatherData) => {
+  optStatus();
+  eStatus();
+
   let temp, rangeTemp, humidity, wind, clouds, country, city, geoCoords, description, weatherImage, condition, data;
   temp = Number((weatherData.main.temp - 273.15).toFixed(2));
   rangeTemp = `${Number((weatherData.main.temp_min - 273.15).toFixed(2))} to ${Number((weatherData.main.temp_max - 273.15).toFixed(2))}`;

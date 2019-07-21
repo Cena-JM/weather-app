@@ -106,3 +106,7 @@ sup {
 .geo {
     font-size: 1.1em;
 }
+
+#error-container {
+    color: #ff0000;
+}

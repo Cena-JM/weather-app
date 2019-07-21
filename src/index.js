@@ -1,8 +1,10 @@
 import _ from 'lodash';
 import './styles/styles.css';
-// import { getWeatherData } from './load_weather'
-import { weatherForm } from "./render_page_form";
+import { weatherForm } from "./render_form";
+import { errorContainer } from "./render_error_container";
+import { outputContainer } from "./render_output_container";
 
 
-// getWeatherData('beijing');
 weatherForm();
+errorContainer();
+outputContainer();
