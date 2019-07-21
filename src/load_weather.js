@@ -1,5 +1,5 @@
 import { renderWeather } from "./render_weather_data";
-import { optStatus, eStatus } from './controller';
+import { optStatus, eStatus, hidePageloder } from './controller';
 import { renderError } from "./render_error";
 
 const getWeatherData = (location) => {
@@ -8,6 +8,7 @@ const getWeatherData = (location) => {
     .then(function(response) {
         return response.json();
   }).then(function(response) {
+    hidePageloder();
     setWeatherData(response);
   }).catch(() => {
     renderError();

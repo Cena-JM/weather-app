@@ -17,7 +17,13 @@ const eStatus = () => {
   }
 }
 
+const hidePageloder = () => {
+  let pageloader = document.querySelector('.page-loader');
+  pageloader.classList.add('hidden');
+}
+
 export {
   optStatus,
-  eStatus
+  eStatus,
+  hidePageloder
 }

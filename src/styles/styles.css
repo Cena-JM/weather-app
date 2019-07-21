@@ -110,3 +110,16 @@ sup {
 #error-container {
     color: #ff0000;
 }
+
+.page-loader {
+    text-align: center;
+}
+
+.page-loader img {
+    width: 60px;
+    height: 60px;
+}
+
+.hidden {
+    display: none;
+}

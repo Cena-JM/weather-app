@@ -1,4 +1,6 @@
 import { getWeatherData } from './load_weather';
+// let pageloader = document.querySelector('.page-loader');
+// console.log(pageloader);
 
 const weatherForm = () => {
     // Select container
@@ -34,6 +36,8 @@ const weatherForm = () => {
 
     inputContainer.addEventListener("submit", (e) => {
         e.preventDefault();
+        let pageloader = document.querySelector('.page-loader');
+        pageloader.classList.remove('hidden');
         getWeatherData(inputField.value);
         inputField.value = '';
     });
