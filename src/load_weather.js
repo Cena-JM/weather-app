@@ -6,11 +6,13 @@ const getWeatherData = (location) => {
         return response.json();
   }).then(function(response) {
     setWeatherData(response)
+  }).catch((error) => {
+    console.log(error)
   });
 }
 
 const setWeatherData = (weatherData) => {
-  let temp, rangeTemp, humidity, wind, clouds, country, city, geoCoords, description, weatherImage, condition;
+  let temp, rangeTemp, humidity, wind, clouds, country, city, geoCoords, description, weatherImage, condition, data;
   temp = Number((weatherData.main.temp - 273.15).toFixed(2));
   rangeTemp = `${Number((weatherData.main.temp_min - 273.15).toFixed(2))} to ${Number((weatherData.main.temp_max - 273.15).toFixed(2))}`;
   humidity = weatherData.main.humidity;
@@ -23,7 +25,7 @@ const setWeatherData = (weatherData) => {
   condition = weatherData.weather[0].main;
   weatherImage = processWeatherdesc(condition);
 
-  let data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description, 'weatherImage': weatherImage};
+  data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description, 'weatherImage': weatherImage};
   console.log(data);
   renderWeather(data.weatherImage, data.city, data.country, data.description, data.clouds, data.geoCoords, data.humidity, data.temp, data.rangeTemp, data.wind);
 }
