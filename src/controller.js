@@ -1,3 +1,23 @@
+const processWeatherdesc = (condition) => {
+  let atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Ash', 'Squall', 'Tornado'];
+  if (condition === 'Thunderstorm') {
+    return 'thunderstorm.png';
+  }else if (condition === 'Drizzle') {
+    return 'shower-rain.png'
+  }else if (condition === 'Rain') {
+    return 'rain.png'
+  }else if (condition === 'Snow') {
+    return 'snow.png'
+  }else if (atmosphere.includes(condition)) {
+    return 'mist.png'
+  }else if (condition === 'Clear') {
+    return 'clear-sky.png'
+  }else if (condition === 'Clouds') {
+    return 'broken-clouds.png'
+  }
+  return 'scattered-clouds.png'
+}
+
 const optStatus = () => {
   const outputContainer = document.querySelector('.output-container');
   if (outputContainer.childNodes.length > 0) {
@@ -23,6 +43,7 @@ const hidePageloder = () => {
 }
 
 export {
+  processWeatherdesc,
   optStatus,
   eStatus,
   hidePageloder

@@ -1,5 +1,5 @@
 import { renderWeather } from "./render_weather_data";
-import { optStatus, eStatus, hidePageloder } from './controller';
+import { processWeatherdesc, optStatus, eStatus, hidePageloder } from './controller';
 import { renderError } from "./render_error";
 
 const getWeatherData = (location) => {
@@ -35,26 +35,6 @@ const setWeatherData = (weatherData) => {
   data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description, 'weatherImage': weatherImage};
   console.log(data);
   renderWeather(data.weatherImage, data.city, data.country, data.description, data.clouds, data.geoCoords, data.humidity, data.temp, data.rangeTemp, data.wind);
-}
-
-const processWeatherdesc = (condition) => {
-  let atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Ash', 'Squall', 'Tornado'];
-  if (condition === 'Thunderstorm') {
-    return 'thunderstorm.png';
-  }else if (condition === 'Drizzle') {
-    return 'shower-rain.png'
-  }else if (condition === 'Rain') {
-    return 'rain.png'
-  }else if (condition === 'Snow') {
-    return 'snow.png'
-  }else if (atmosphere.includes(condition)) {
-    return 'mist.png'
-  }else if (condition === 'Clear') {
-    return 'clear-sky.png'
-  }else if (condition === 'Clouds') {
-    return 'broken-clouds.png'
-  }
-  return 'scattered-clouds.png'
 }
 
 export {getWeatherData}
