@@ -74,6 +74,11 @@ sup {
     padding: 20px;
 }
 
+#output-image img {
+    width: 90px;
+    height: auto;
+}
+
 #output-description {
     text-align: left;
 }

@@ -3,4 +3,4 @@ import './styles/styles.css';
 import { getWeatherData } from './load_weather'
 
 
-getWeatherData('kampala');
+getWeatherData('beijing');

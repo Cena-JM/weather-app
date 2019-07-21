@@ -1,4 +1,4 @@
-const renderWeather = (city, country, desc, clds, geoc, hum, tem, rgtem, win) => {
+const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rgtem, win) => {
     // Select container
     const container = document.querySelector('.container');
 
@@ -15,6 +15,7 @@ const renderWeather = (city, country, desc, clds, geoc, hum, tem, rgtem, win) =>
     const clouds = document.createElement('p');
     const geoCoords = document.createElement('p');
     const geo = document.createElement('span');
+    const weatherImage = document.createElement('img');
 
 
     geoCoords.innerHTML = 'Geo coords - ';
@@ -22,6 +23,8 @@ const renderWeather = (city, country, desc, clds, geoc, hum, tem, rgtem, win) =>
     // Add classes and ids to elements
     outputContainer.classList.add('output-container');
     outputImage.setAttribute('id', 'output-image');
+    weatherImage.setAttribute('src', `images/${weatherImg}`);
+    weatherImage.setAttribute('alt', 'weather image');
     outputDescription.setAttribute('id', 'output-description');
     outputName.classList.add('high-light', 'name');
     temp.classList.add('temp');
@@ -29,6 +32,7 @@ const renderWeather = (city, country, desc, clds, geoc, hum, tem, rgtem, win) =>
 
     // Arrange elements
     container.appendChild(outputContainer);
+    outputImage.appendChild(weatherImage);
     outputContainer.appendChild(outputImage);
     outputContainer.appendChild(outputDescription);
     outputDescription.appendChild(outputHead);
@@ -41,8 +45,9 @@ const renderWeather = (city, country, desc, clds, geoc, hum, tem, rgtem, win) =>
     outputDescription.appendChild(geoCoords);
     geoCoords.appendChild(geo);
 
-
     // Add data to elements
+    // outputImage.innerHTML = `<img src="${rain}" alt="weather image"> `;
+
     outputName.innerHTML = `${city}, ${country} `;
     outputHead.innerHTML += `<i class='desc'> ~ ${desc}</i>`;
 

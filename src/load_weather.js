@@ -10,9 +10,9 @@ const getWeatherData = (location) => {
 }
 
 const setWeatherData = (weatherData) => {
-  let temp, rangeTemp, humidity, wind, clouds, country, city, geoCoords, description;
-  temp = weatherData.main.temp;
-  rangeTemp = `${weatherData.main.temp_min} to ${weatherData.main.temp_max}`;
+  let temp, rangeTemp, humidity, wind, clouds, country, city, geoCoords, description, weatherImage, condition;
+  temp = Number((weatherData.main.temp - 273.15).toFixed(2));
+  rangeTemp = `${Number((weatherData.main.temp_min - 273.15).toFixed(2))} to ${Number((weatherData.main.temp_max - 273.15).toFixed(2))}`;
   humidity = weatherData.main.humidity;
   wind = weatherData.wind.speed;
   clouds = weatherData.clouds.all;
@@ -20,9 +20,32 @@ const setWeatherData = (weatherData) => {
   city = weatherData.name;
   geoCoords = `[${weatherData.coord.lat}, ${weatherData.coord.lat}]`;
   description = weatherData.weather[0].description;
-  let data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description};
+  condition = weatherData.weather[0].main;
+  weatherImage = processWeatherdesc(condition);
+
+  let data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description, 'weatherImage': weatherImage};
   console.log(data);
-  renderWeather(data.city, data.country, data.description, data.clouds, data.geoCoords, data.humidity, data.temp, data.rangeTemp, data.wind);
+  renderWeather(data.weatherImage, data.city, data.country, data.description, data.clouds, data.geoCoords, data.humidity, data.temp, data.rangeTemp, data.wind);
+}
+
+const processWeatherdesc = (condition) => {
+  let atmosphere = ['Mist', 'Smoke', 'Haze', 'Dust', 'Fog', 'Sand', 'Ash', 'Squall', 'Tornado'];
+  if (condition === 'Thunderstorm') {
+    return 'thunderstorm.png';
+  }else if (condition === 'Drizzle') {
+    return 'shower-rain.png'
+  }else if (condition === 'Rain') {
+    return 'rain.png'
+  }else if (condition === 'Snow') {
+    return 'snow.png'
+  }else if (atmosphere.includes(condition)) {
+    return 'mist.png'
+  }else if (condition === 'Clear') {
+    return 'clear-sky.png'
+  }else if (condition === 'Clouds') {
+    return 'broken-clouds.png'
+  }
+  return 'scattered-clouds.png'
 }
 
 export {getWeatherData}
