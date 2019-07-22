@@ -1,6 +1,6 @@
 # weather-app
 
-This is weather forecast site which uses Open-Weather-Map API to forecast weather of a given place (region).
+This is a weather forecast site which uses Open-Weather-Map API to forecast weather of a given place (region).
 
 ## Live
 [Live](https://raw.githack.com/Cena-JM/weather-app/development/dist/index.html)
