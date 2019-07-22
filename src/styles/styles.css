@@ -123,3 +123,24 @@ sup {
 .hidden {
     display: none;
 }
+
+/* toggle */
+.toggle {
+    border: 1px solid #ccc;
+    width: 90px;
+}
+
+.temp-btn {
+    border: none;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 4px 12px;
+    width: 45px;
+    background: none;
+}
+
+.current-temp {
+    color: #fff;
+    background: #004069;
+
+}
