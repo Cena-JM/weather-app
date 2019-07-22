@@ -19,7 +19,7 @@ This is a weather forecast site which uses Open-Weather-Map API to forecast weat
 
 To get started clone this repo into your local machine/computer
 
-```git clone https://github.com/Cena-JM/todo-list.git```
+```git clone https://github.com/Cena-JM/weather-app.git```
 
 Then navigate into the folder
 
