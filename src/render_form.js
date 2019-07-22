@@ -29,6 +29,7 @@ const weatherForm = () => {
     inputField.setAttribute('id', 'input-field');
     inputField.setAttribute('type', 'text');
     inputField.setAttribute('required', true);
+    inputField.setAttribute('placeholder', 'What location are you looking for?');
     inputBtn.setAttribute('id', 'input-btn');
     inputBtn.setAttribute('type', 'submit');
     search.classList.add('fas', 'fa-search');
@@ -44,7 +45,7 @@ const weatherForm = () => {
     container.appendChild(inputContainer);
 
     // Add data to elements
-    head.innerHTML = 'What location are you looking for?';
+    head.innerHTML = 'Weather app';
     celsiusBtn.innerHTML = `<sup>o</sup>C`;
     fahrenheitBtn.innerHTML = `<sup>o</sup>F`;
 
