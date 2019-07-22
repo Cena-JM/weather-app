@@ -30,7 +30,6 @@ const optStatus = () => {
 
 const eStatus = () => {
   let errorContainer = document.querySelector('#error-container');
-  console.log(errorContainer);
   if (errorContainer.childNodes.length > 0) {
     let err = document.querySelector('#location-error');
     errorContainer.removeChild(err);

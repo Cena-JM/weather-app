@@ -1,6 +1,4 @@
 import { getWeatherData } from './load_weather';
-// let pageloader = document.querySelector('.page-loader');
-// console.log(pageloader);
 
 const weatherForm = () => {
     // Select container

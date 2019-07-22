@@ -30,12 +30,7 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     temp.classList.add('temp');
     geo.classList.add('high-light', 'geo');
 
-    if (weatherData !== 0) {
-        container.removeChild(weatherData);
-        weatherData = 0;
-    }
     // weatherData = outputContainer;
-    // container.appendChild(weatherData);
     outputImage.appendChild(weatherImage);
     outputContainer.appendChild(outputImage);
     outputContainer.appendChild(outputDescription);

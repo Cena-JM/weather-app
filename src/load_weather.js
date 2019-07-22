@@ -33,7 +33,6 @@ const setWeatherData = (weatherData) => {
   weatherImage = processWeatherdesc(condition);
 
   data  = {'temp': temp, 'rangeTemp': rangeTemp, 'humidity': humidity, 'wind': wind, 'clouds': clouds, 'country': country, 'city': city, 'geoCoords': geoCoords, 'description': description, 'weatherImage': weatherImage};
-  console.log(data);
   renderWeather(data.weatherImage, data.city, data.country, data.description, data.clouds, data.geoCoords, data.humidity, data.temp, data.rangeTemp, data.wind);
 }
 
