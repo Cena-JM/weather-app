@@ -1,5 +1,4 @@
-let weatherData = 0;
-const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rgtem, win) => {
+const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rgtem, win, tempUnit) => {
     // Select container
     const container = document.querySelector('.container');
     const outputContainer = document.querySelector('.output-container');
@@ -30,7 +29,6 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     temp.classList.add('temp');
     geo.classList.add('high-light', 'geo');
 
-    // weatherData = outputContainer;
     outputImage.appendChild(weatherImage);
     outputContainer.appendChild(outputImage);
     outputContainer.appendChild(outputDescription);
@@ -48,8 +46,8 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     outputName.innerHTML = `${city}, ${country} `;
     outputHead.innerHTML += `<i class='desc'> ~ ${desc}</i>`;
 
-    temp.innerHTML = `${tem}<sup>o</sup>C`;
-    outputTemp.innerHTML += ` temperature from ${rgtem}<sup>o</sup>C`;
+    temp.innerHTML = `${tem}<sup>o</sup>${tempUnit}`;
+    outputTemp.innerHTML += ` temperature from ${rgtem}<sup>o</sup>${tempUnit}`;
 
     wind.innerHTML = `Wind - ${win}m/s`;
 

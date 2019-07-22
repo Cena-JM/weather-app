@@ -18,6 +18,18 @@ const processWeatherdesc = (condition) => {
   return 'scattered-clouds.png'
 }
 
+const temperature = (temp, unit) => {
+  let tp
+  if (unit === 'C') {
+    tp = Number((temp - 273.15).toFixed(2));
+    return tp;
+  }else if (unit === 'F') {
+    tp = Number(((temp - 273.15) * 9/5 + 32).toFixed(2));
+    return tp
+  }
+  return temp;
+}
+
 const optStatus = () => {
   const outputContainer = document.querySelector('.output-container');
   if (outputContainer.childNodes.length > 0) {
@@ -43,6 +55,7 @@ const hidePageloder = () => {
 
 export {
   processWeatherdesc,
+  temperature,
   optStatus,
   eStatus,
   hidePageloder

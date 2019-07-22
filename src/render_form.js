@@ -19,8 +19,10 @@ const weatherForm = () => {
     toggle.classList.add('toggle');
     celsiusBtn.classList.add('temp-btn', 'current-temp');
     celsiusBtn.setAttribute('id', 'celsius-btn');
+    celsiusBtn.setAttribute('value', 'C')
     fahrenheitBtn.classList.add('temp-btn');
     fahrenheitBtn.setAttribute('id', 'fahrenheit-btn');
+    fahrenheitBtn.setAttribute('value', 'F')
     inputContainer.setAttribute('id', 'form');
     inputContainer.classList.add('input-container');
     inputField.setAttribute('id', 'input-field');
@@ -45,11 +47,23 @@ const weatherForm = () => {
     celsiusBtn.innerHTML = `<sup>o</sup>C`;
     fahrenheitBtn.innerHTML = `<sup>o</sup>F`;
 
-    inputContainer.addEventListener("submit", (e) => {
+    // Add Event Listeners
+    celsiusBtn.addEventListener('click', () => {
+        fahrenheitBtn.classList.remove('current-temp');
+        celsiusBtn.classList.add('current-temp');
+    });
+
+    fahrenheitBtn.addEventListener('click', () => {
+        celsiusBtn.classList.remove('current-temp');
+        fahrenheitBtn.classList.add('current-temp');
+    });
+
+    inputContainer.addEventListener('submit', (e) => {
         e.preventDefault();
         let pageloader = document.querySelector('.page-loader');
+        let currentTemp = document.querySelector('.current-temp');
         pageloader.classList.remove('hidden');
-        getWeatherData(inputField.value);
+        getWeatherData(inputField.value, currentTemp.value);
         inputField.value = '';
     });
 }
