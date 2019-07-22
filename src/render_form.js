@@ -1,5 +1,4 @@
 import { getWeatherData } from './load_weather';
-// import { checkOutput } from "./controller";
 import { toggleTemp } from "./convert_temperature";
 
 const weatherForm = () => {
