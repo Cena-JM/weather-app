@@ -1,4 +1,6 @@
 import { getWeatherData } from './load_weather';
+// import { checkOutput } from "./controller";
+import { toggleTemp } from "./convert_temperature";
 
 const weatherForm = () => {
     // Select container
@@ -51,19 +53,22 @@ const weatherForm = () => {
     celsiusBtn.addEventListener('click', () => {
         fahrenheitBtn.classList.remove('current-temp');
         celsiusBtn.classList.add('current-temp');
+        toggleTemp(celsiusBtn.value);
     });
 
     fahrenheitBtn.addEventListener('click', () => {
         celsiusBtn.classList.remove('current-temp');
         fahrenheitBtn.classList.add('current-temp');
+        toggleTemp(fahrenheitBtn.value);
     });
 
     inputContainer.addEventListener('submit', (e) => {
         e.preventDefault();
         let pageloader = document.querySelector('.page-loader');
-        let currentTemp = document.querySelector('.current-temp');
+        celsiusBtn.classList.add('current-temp');
+        fahrenheitBtn.classList.remove('current-temp');
         pageloader.classList.remove('hidden');
-        getWeatherData(inputField.value, currentTemp.value);
+        getWeatherData(inputField.value);
         inputField.value = '';
     });
 }

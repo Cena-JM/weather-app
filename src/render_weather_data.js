@@ -1,6 +1,5 @@
-const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rgtem, win, tempUnit) => {
+const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, temC, temF, mntemC, mxtemC, mntemF, mxtemF, win) => {
     // Select container
-    const container = document.querySelector('.container');
     const outputContainer = document.querySelector('.output-container');
 
     // Create elements
@@ -9,7 +8,10 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     const outputHead = document.createElement('h3');
     const outputName = document.createElement('span');
     const outputTemp = document.createElement('p');
-    const temp = document.createElement('span');
+    const tempC = document.createElement('span');
+    const tempF = document.createElement('span');
+    const rgtempC = document.createElement('span');
+    const rgtempF = document.createElement('span');
     const wind = document.createElement('p');
     const humidity = document.createElement('p');
     const clouds = document.createElement('p');
@@ -26,7 +28,12 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     weatherImage.setAttribute('alt', 'weather image');
     outputDescription.setAttribute('id', 'output-description');
     outputName.classList.add('high-light', 'name');
-    temp.classList.add('temp');
+    tempC.classList.add('temp');
+    tempF.classList.add('temp', 'hidden');
+    tempC.setAttribute('id', 'temp-c');
+    tempF.setAttribute('id', 'temp-f');
+    rgtempC.classList.add('rg-tempc');
+    rgtempF.classList.add('rg-tempf', 'hidden');
     geo.classList.add('high-light', 'geo');
 
     outputImage.appendChild(weatherImage);
@@ -35,7 +42,10 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     outputDescription.appendChild(outputHead);
     outputHead.appendChild(outputName);
     outputDescription.appendChild(outputTemp);
-    outputTemp.appendChild(temp);
+    outputTemp.appendChild(tempC);
+    outputTemp.appendChild(tempF);
+    outputTemp.appendChild(rgtempC);
+    outputTemp.appendChild(rgtempF);
     outputDescription.appendChild(wind);
     outputDescription.appendChild(humidity);
     outputDescription.appendChild(clouds);
@@ -46,8 +56,10 @@ const renderWeather = (weatherImg, city, country, desc, clds, geoc, hum, tem, rg
     outputName.innerHTML = `${city}, ${country} `;
     outputHead.innerHTML += `<i class='desc'> ~ ${desc}</i>`;
 
-    temp.innerHTML = `${tem}<sup>o</sup>${tempUnit}`;
-    outputTemp.innerHTML += ` temperature from ${rgtem}<sup>o</sup>${tempUnit}`;
+    tempC.innerHTML = `${temC}<sup>o</sup>C`;
+    tempF.innerHTML = `${temF}<sup>o</sup>F`;
+    rgtempC.innerHTML = ` temperature from ${mntemC} to ${mxtemC}<sup>o</sup>C`;
+    rgtempF.innerHTML = ` temperature from ${mntemF} to ${mxtemF}<sup>o</sup>F`;
 
     wind.innerHTML = `Wind - ${win}m/s`;
 

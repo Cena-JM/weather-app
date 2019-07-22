@@ -30,6 +30,12 @@ const temperature = (temp, unit) => {
   return temp;
 }
 
+const checkOutput = () => {
+  const outputContainer = document.querySelector('.output-container');
+  if (outputContainer.childNodes.length > 0) { return true}
+  return false;
+}
+
 const optStatus = () => {
   const outputContainer = document.querySelector('.output-container');
   if (outputContainer.childNodes.length > 0) {
@@ -56,6 +62,7 @@ const hidePageloder = () => {
 export {
   processWeatherdesc,
   temperature,
+  checkOutput,
   optStatus,
   eStatus,
   hidePageloder
