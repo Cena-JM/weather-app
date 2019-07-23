@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: rgb(80, 80, 80);
+    background: linear-gradient(to bottom, rgb(0, 181, 255), rgb(185, 235, 255), rgb(234, 249, 255), rgb(245, 252, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+input, button {
+    outline: none;
+}
+
+sup {
+    font-size: 0.7em
+}
+
+.container {
+    margin: 0 auto;
+    width: 650px;
+    /* height: 768px, 100vh; */
+    text-align: center;
+
+}
+
+.title {
+    margin: 60px 0;
+    font-size: 3em;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.input-container {
+    width: 645px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    height: 50px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+}
+
+#input-field {
+    width: 600px;
+    border: none;
+    padding: 0 12px;
+    font-size: 1.2em;
+    background: none;
+}
+
+#input-btn {
+    width: 40px;
+    padding: 0;
+    border: none;
+    background: #fff;
+    font-size: 1.4em;
+    color: rgb(80, 80, 80);
+    background: none;
+}
+
+.output-container {
+    /* width: 600px; */
+    /* height: 300px; */
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#output-image {
+    width: 150px;
+    padding: 20px;
+}
+
+#output-image img {
+    width: 90px;
+    height: auto;
+}
+
+#output-description {
+    text-align: left;
+}
+
+#output-description h3 {
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.temp {
+    padding: 3px 6px;
+    background: rgb(80, 80, 80);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.high-light {
+    color: rgb(255, 136, 0);
+}
+
+.name {
+    font-size: 1.3em;
+}
+
+.geo {
+    font-size: 1.1em;
+}
+
+#error-container {
+    color: #ff0000;
+}
+
+.page-loader {
+    text-align: center;
+}
+
+.page-loader img {
+    width: 60px;
+    height: 60px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* toggle */
+.toggle {
+    border: 1px solid #ccc;
+    width: 90px;
+    float: right;
+}
+
+.temp-btn {
+    border: none;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 4px 12px;
+    width: 45px;
+    background: none;
+}
+
+.current-temp {
+    color: #fff;
+    background: #004069;
+
+}
